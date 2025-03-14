@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\Admin\BlogController;
+Route::controller(BlogController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function () {    
+    Route::get('blog/create', 'add')->name('blog.add');
+    Route::post('blog/create', 'create')->name('blog.create');
+    Route::get('blog', 'index')->name('blog.index');
+    Route::get('blog/edit', 'edit')->name('blog.edit');
+    Route::post('blog/edit', 'update')->name('blog.update');
+    Route::get('blog/delete', 'delete')->name('blog.delete');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
