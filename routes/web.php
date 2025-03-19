@@ -30,3 +30,5 @@ Route::controller(BlogController::class)->prefix('admin')->name('admin.')->middl
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+use App\Http\Controllers\BlogController as PublicBlogController;
+Route::get('/', [PublicNewsController::class, 'index'])->name('blog.index');
