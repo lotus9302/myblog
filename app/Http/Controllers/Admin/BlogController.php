@@ -27,6 +27,7 @@ class BlogController extends Controller
 
         $blog = new Blog;
         $form = $request->all();
+        //dd($form);
 
         // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
         if (isset($form['image'])) {
@@ -43,6 +44,8 @@ class BlogController extends Controller
 
         // データベースに保存する
         $blog->fill($form);
+        $blog->user_id = \Auth::id();
+        //dd($blog);
         $blog->save();
         // 追記ここまで
         // admin/news/createにリダイレクトする

@@ -9,6 +9,19 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
+    public function add()
+    {
+        return view('admin.blog.create');
+    }
+
+    // 以下を追記
+    public function create(Request $request)
+    {
+        // admin/news/createにリダイレクトする
+        return redirect('admin/create');
+    }
+
+
     public function index(Request $request)
     {
         $posts = Blog::all()->sortByDesc('updated_at');

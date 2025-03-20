@@ -20,4 +20,9 @@ class Blog extends Model
     {
         return $this->hasMany('App\Models\History');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
