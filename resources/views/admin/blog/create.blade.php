@@ -10,7 +10,7 @@
 <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>日常料理レシピ</h2>
+                <h2>料理レシピ</h2>
                 <form action="{{ route('admin.blog.create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)

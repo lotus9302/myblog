@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>日常料理レシピ</h2>
+            <h2>料理レシピ</h2>
         </div>
         
         
