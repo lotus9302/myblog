@@ -20,9 +20,7 @@ class BlogController extends Controller
         // admin/news/createにリダイレクトする
         return redirect('admin/create');
     }
-
-
-    public function index(Request $request)
+    public function show(Request $request)  
     {
         $posts = Blog::all()->sortByDesc('updated_at');
 
@@ -35,5 +33,10 @@ class BlogController extends Controller
         // news/index.blade.php ファイルを渡している
         // また View テンプレートに headline、 posts、という変数を渡している
         return view('blog.index', ['headline' => $headline, 'posts' => $posts]);
+    }
+
+        // TODO: idで検索
+        // TODO: 詳細画面用のbladeファイルに渡す
     } 
-}
+
+
