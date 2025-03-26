@@ -25,10 +25,14 @@ Route::controller(BlogController::class)->prefix('admin')->name('admin.')->middl
     Route::get('blog/edit', 'edit')->name('blog.edit');
     Route::post('blog/edit', 'update')->name('blog.update');
     Route::get('blog/delete', 'delete')->name('blog.delete');
+    Route::get('blog/show', 'edit')->name('blog.show');
+
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 use App\Http\Controllers\BlogController as PublicBlogController;
-Route::get('/', [PublicBlogController::class, 'show'])->name('blog.show');
+Route::get('/', [PublicBlogController::class, 'index'])->name('blog.index');
+Route::get('/show', [PublicBlogController::class, 'show'])->name('blog.show');
+
