@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>料理レシピ</h2>
+                <h2>ブログ記事</h2>
                 <form action="{{ route('admin.blog.update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>

@@ -2,13 +2,6 @@
 @section('title', '登録済みブログの一覧')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <h2>ブログ記事</h2>
-        </div>
-        
-        
-    </div>
     <div class="container row offset-sm-4 col-sm-4">
         <div class="row mt-4">
             <h2 class="col-sm-12 text-center">{{ $blog_form->title }}</h2>
